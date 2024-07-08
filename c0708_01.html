@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+
+    </style>
+</head>
+<body>
+    <script>
+        /* JS之Strings類別 */
+
+        //全部轉大寫 toUpperCase()
+        let myText = "Hello Word :) ";
+        let myChange_toUpperText  = myText.toUpperCase() ; 
+        
+
+
+        console.log('myText:' , myText );
+        console.log('typeof(myText):' , typeof(myText));
+        console.log('myChange_toUpperText:' , myChange_toUpperText );
+        console.log('typeof(myChange_toUpperText):' , typeof(myChange_toUpperText));
+
+        //補0
+        let num=8;
+        console.log('typeof(num):' , typeof(num));
+        let changeNum = num.toString().padStart(5,"0"); // padStart(5,"0")不足5位數時，補"0“填滿到5位數
+        console.log("changeNum",changeNum);
+        console.log('typeof(changeNum):' , typeof(changeNum));
+
+
+ 
+
+        console.log('ChangeUpperText', ChangeUpperText);
+        console.log('typeof(ChangeUpperText)', typeof (ChangeUpperText));
+
+        let numText = "5";
+        let ChangePadStart = numText.padStart(5, "0");
+        console.log('ChangePadStart', ChangePadStart);
+
+
+        let num = 8;
+        let changeNum = num.toString().padStart(5, "0");
+        console.log('changeNum', changeNum);
+
+        let highNum = 2000;
+        let lowNum = 200;
+        let highStr = "這是目前高點的文字補充";
+        let lowStr = "這是目前高點的文字補充";
+
+
+
+    </script>
+</body>
+</html>

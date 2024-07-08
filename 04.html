@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>點餐</title>
+    <style>
+        table {
+            border: 1px solid black;
+            background-color: #ccc;
+            width: 100%;
+            text-align: center;
+        }
+
+        th,
+        td {
+            padding: 8px;
+        }
+
+        p {
+            text-align: center;
+            color: green;
+        }
+
+        input {
+            width: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <div class="container">
+            <table>
+                <tr>
+                    <td colspan="5">
+                        <p>凡購買滿500元以上，結帳金額回饋七折優惠！</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>名稱</th>
+                    <th>單價</th>
+                    <th>數量</th>
+                    <th>小計</th>
+                    <th>金額</th>
+                </tr>
+                <tr>
+                    <td>咖啡</td>
+                    <td><input type="number" id="pricing_coffee" value="50" onchange="calculateTotal()"></td><!-- 單價-咖啡 -->
+                    <td><input type="number" min="0" name="qty_coffee" id="qty_coffee" onchange="calculateTotal()"></td><!-- 數量 -->
+                    <td><label for="total_coffee" id="total_coffee">0</label></td><!-- 費用小計-咖啡品項 -->
+                    <td rowspan="3"><label for="sumNum" id="sumNum">0</label></td><!-- 結帳金額 -->
+                </tr>
+                <tr>
+                    <td>花茶</td>
+                    <td><input type="number" id="pricing_scentedTea" value="100" onchange="calculateTotal()"></td><!-- 單價-花茶 -->
+                    <td><input type="number" min="0" name="qty_scentedTea" id="qty_scentedTea" onchange="calculateTotal()"></td><!-- 數量 -->
+                    <td><label for="total_scentedTea" id="total_scentedTea">0</label></td><!-- 費用小計-花茶品項 -->
+                </tr>
+                <tr>
+                    <td>蛋糕</td>
+                    <td><input type="number" id="pricing_cake" value="70" onchange="calculateTotal()"></td><!-- 單價-蛋糕 -->
+                    <td><input type="number" min="0" name="qty_cake" id="qty_cake" onchange="calculateTotal()"></td><!-- 數量 -->
+                    <td><label for="total_cake" id="total_cake">0</label></td><!-- 費用小計-蛋糕品項 -->
+                </tr>
+            </table>
+        </div>
+    </form>
+
+    <script>
+        // 定義計算總金額的函式
+        function calculateTotal() {
+            // 取得各產品的單價和數量
+            var pricing_coffee = Number(document.getElementById("pricing_coffee").value);
+            var qty_coffee = Number(document.getElementById("qty_coffee").value);
+            var pricing_scentedTea = Number(document.getElementById("pricing_scentedTea").value);
+            var qty_scentedTea = Number(document.getElementById("qty_scentedTea").value);
+            var pricing_cake = Number(document.getElementById("pricing_cake").value);
+            var qty_cake = Number(document.getElementById("qty_cake").value);
+
+            // 計算各產品的小計
+            var total_coffee = pricing_coffee * qty_coffee;
+            var total_scentedTea = pricing_scentedTea * qty_scentedTea;
+            var total_cake = pricing_cake * qty_cake;
+
+            // 更新小計顯示
+            document.getElementById("total_coffee").textContent = total_coffee;
+            document.getElementById("total_scentedTea").textContent = total_scentedTea;
+            document.getElementById("total_cake").textContent = total_cake;
+
+            // 計算總金額
+            var totalSum = total_coffee + total_scentedTea + total_cake;
+
+            // 如果總金額超過或等於500，套用七折優惠
+            if (totalSum >= 500) {
+                totalSum *= 0.7; // 七折優惠
+            }
+
+            // 更新結帳金額顯示
+            document.getElementById("sumNum").textContent = totalSum.toFixed(2); // 顯示兩位小數
+        }
+    </script>
+</body>
+
+</html>
