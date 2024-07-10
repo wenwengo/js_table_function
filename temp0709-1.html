@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="myInputText"> 結果: <div id="myDivResult" style="background-color: pink;"></div>
+<script>
+ 
+
+
+myInputText.addEventListener('input',function () {
+
+  myDivResult.innerHTML = myInputText.value;
+})
+
+
+  myInputText.oninput = function() {
+     myDivResult.innerHTML = myInputText.value;
+   };
+</script>
+      
+</body>
+</html>

@@ -47,21 +47,27 @@
                 </tr>
                 <tr>
                     <td>咖啡</td>
-                    <td><input type="number" id="pricing_coffee" value="50" onchange="calculateTotal()"></td><!-- 單價-咖啡 -->
-                    <td><input type="number" min="0" name="qty_coffee" id="qty_coffee" onchange="calculateTotal()"></td><!-- 數量 -->
+                    <td><input type="number" id="pricing_coffee" value="50" onchange="calculateTotal()"></td>
+                    <!-- 單價-咖啡 -->
+                    <td><input type="number" min="0" name="qty_coffee" id="qty_coffee" onchange="calculateTotal()"></td>
+                    <!-- 數量 -->
                     <td><label for="total_coffee" id="total_coffee">0</label></td><!-- 費用小計-咖啡品項 -->
                     <td rowspan="3"><label for="sumNum" id="sumNum">0</label></td><!-- 結帳金額 -->
                 </tr>
                 <tr>
                     <td>花茶</td>
-                    <td><input type="number" id="pricing_scentedTea" value="100" onchange="calculateTotal()"></td><!-- 單價-花茶 -->
-                    <td><input type="number" min="0" name="qty_scentedTea" id="qty_scentedTea" onchange="calculateTotal()"></td><!-- 數量 -->
+                    <td><input type="number" id="pricing_scentedTea" value="100" onchange="calculateTotal()"></td>
+                    <!-- 單價-花茶 -->
+                    <td><input type="number" min="0" name="qty_scentedTea" id="qty_scentedTea"
+                            onchange="calculateTotal()"></td><!-- 數量 -->
                     <td><label for="total_scentedTea" id="total_scentedTea">0</label></td><!-- 費用小計-花茶品項 -->
                 </tr>
                 <tr>
                     <td>蛋糕</td>
-                    <td><input type="number" id="pricing_cake" value="70" onchange="calculateTotal()"></td><!-- 單價-蛋糕 -->
-                    <td><input type="number" min="0" name="qty_cake" id="qty_cake" onchange="calculateTotal()"></td><!-- 數量 -->
+                    <td><input type="number" id="pricing_cake" value="70" onchange="calculateTotal()"></td>
+                    <!-- 單價-蛋糕 -->
+                    <td><input type="number" min="0" name="qty_cake" id="qty_cake" onchange="calculateTotal()"></td>
+                    <!-- 數量 -->
                     <td><label for="total_cake" id="total_cake">0</label></td><!-- 費用小計-蛋糕品項 -->
                 </tr>
             </table>
@@ -100,6 +106,30 @@
             // 更新結帳金額顯示
             document.getElementById("sumNum").textContent = totalSum.toFixed(2); // 顯示兩位小數
         }
+
+        let carOrders = [
+            {
+                id: 1,
+                name: '臺北',
+                cnumber: "100",
+                cityArray: ['臺北1', '臺北2', '臺北3']
+            },
+            {
+                id: 2,
+                type:'臺中',
+                cnumber: "200",
+                cityArray: ['臺中1', '臺中2', '臺中3']
+            },
+            {
+                id: 3,
+                type: '高雄',
+                cnumber: "300",
+                cityArray:  ['高雄1', '高雄2', '高雄3']
+            };
+        ];
+        array.forEach(element => {
+
+        });
     </script>
 </body>
 
